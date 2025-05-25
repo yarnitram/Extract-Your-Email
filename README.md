@@ -39,4 +39,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-[Specify your license here, e.g., MIT, Apache 2.0, etc.]
+MIT, Apache 2.0

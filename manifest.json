@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Email Extractor",
+  "version": "1.0",
+  "description": "Extracts email addresses from the current web page.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "commands"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "commands": {
+    "manual_scan": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Manually scan the current page for emails."
+    }
+  }
+}

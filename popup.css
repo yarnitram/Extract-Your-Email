@@ -1,0 +1,172 @@
+/* popup.css */
+
+body {
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 15px; /* Increased padding */
+  min-width: 500px; /* Significantly increased minimum width */
+  min-height: 600px; /* Significantly increased minimum height */
+  background-color: #e9ecef; /* Lighter background for a modern feel */
+  color: #343a40; /* Slightly darker text */
+}
+
+h1 {
+  font-size: 1.6em; /* Larger heading */
+  margin-bottom: 20px; /* More margin */
+  color: #007bff; /* Primary blue color */
+  border-bottom: 2px solid #007bff; /* Thicker, colored border */
+  padding-bottom: 10px;
+}
+
+#statusMessage, #allEmailsStatusMessage {
+  font-size: 1em; /* Slightly larger status message */
+  color: #555;
+  margin-bottom: 15px; /* Increased margin */
+}
+
+#emailList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0; /* Increased margin */
+  max-height: 300px; /* Increased max height */
+  overflow-y: auto;
+  border: 1px solid #ced4da; /* Bootstrap-like border color */
+  border-radius: 8px; /* More rounded corners */
+  background-color: #fff; /* White background for list */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+#emailList li {
+  padding: 10px 15px; /* Increased padding */
+  border-bottom: 1px solid #dee2e6; /* Lighter border */
+  word-break: break-all; /* Prevent long emails from overflowing */
+  transition: background-color 0.2s ease;
+}
+
+#emailList li:hover {
+  background-color: #f8f9fa; /* Highlight on hover */
+}
+
+#emailList li:last-child {
+  border-bottom: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Increased space between buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller popups */
+}
+
+button {
+  padding: 12px 20px; /* Increased padding */
+  border: none;
+  border-radius: 5px; /* Standard border radius */
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  font-size: 1em; /* Standard font size */
+  flex-grow: 1;
+  text-align: center;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  min-width: 120px; /* Ensure minimum width for buttons */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #004085;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2); /* Inner shadow on click */
+}
+
+/* Styles for the tabbed interface */
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-buttons {
+  display: flex;
+  margin-bottom: 15px; /* Increased margin */
+  border-bottom: 1px solid #ced4da; /* Bootstrap-like border color */
+}
+
+.tab-button {
+  flex-grow: 1;
+  padding: 15px 20px; /* Increased padding */
+  border: none;
+  background-color: #e9ecef; /* Lighter background */
+  cursor: pointer;
+  font-size: 1em;
+  text-align: center;
+  border-bottom: 3px solid transparent; /* Thicker border */
+  transition: background-color 0.3s ease, border-bottom-color 0.3s ease, color 0.3s ease;
+  color: #495057; /* Darker text color */
+}
+
+.tab-button:hover {
+  background-color: #dee2e6; /* Lighter hover background */
+}
+
+.tab-button.active {
+  background-color: #fff;
+  border-bottom-color: #007bff;
+  font-weight: bold;
+  color: #007bff; /* Match active border color */
+}
+
+.tab-content {
+  display: none; /* Hide inactive tab content */
+}
+
+.tab-content.active {
+  display: block; /* Show active tab content */
+}
+
+/* Specific styles for the All Emails textarea */
+#allEmailsListDisplay {
+  width: 100%;
+  height: 300px; /* Increased height */
+  margin-bottom: 20px; /* Increased margin */
+  padding: 10px;
+  border: 1px solid #ced4da; /* Bootstrap-like border color */
+  border-radius: 5px; /* Standard border radius */
+  font-family: monospace;
+  font-size: 0.9em;
+  resize: vertical;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  background-color: #fff; /* White background */
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Inner shadow */
+}
+
+/* Styles for settings tab */
+#settingsContent {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#settingsContent h2 {
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #343a40;
+}
+
+#settingsContent label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#settingsContent input[type="checkbox"] {
+  margin-right: 10px;
+  /* Add custom checkbox styling if desired */
+}

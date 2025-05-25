@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Extractor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="tab-buttons">
+      <button class="tab-button active" data-tab="currentEmailsTab">Current Emails</button>
+      <button class="tab-button" data-tab="allEmailsTab">All Emails</button>
+      <button class="tab-button" data-tab="settingsTab">Settings</button>
+    </div>
+
+    <div id="currentEmailsTab" class="tab-content active">
+      <h1>Current Page Emails</h1>
+      <div id="statusMessage">Scanning...</div>
+      <ul id="emailList">
+        <!-- Email addresses from the current page will be listed here -->
+      </ul>
+      <div class="button-container">
+        <button id="manualScanButton">Manual Scan</button>
+        <button id="copyCurrentEmailsButton">Copy Current</button>
+        <button id="downloadCurrentEmailsButton">Download Current</button>
+      </div>
+    </div>
+
+    <div id="allEmailsTab" class="tab-content">
+      <h1>All Collected Emails</h1>
+      <div id="allEmailsStatusMessage">Loading...</div>
+      <textarea id="allEmailsListDisplay" readonly></textarea>
+       <div class="button-container">
+        <button id="copyAllEmailsButton">Copy All</button>
+        <button id="clearAllEmailsButton">Clear All</button>
+        <button id="downloadAllEmailsButton">Download All</button>
+        <button id="exportAllEmailsButton">Export All CSV</button>
+        <button id="exportGmailButton">Export @gmail.com CSV</button>
+        <button id="exportYahooButton">Export @yahoo.com CSV</button>
+        <button id="exportOtherButton">Export Other CSV</button>
+      </div>
+    </div>
+
+    <div id="settingsTab" class="tab-content">
+      <h1>Settings</h1>
+      <div id="settingsContent">
+        <h2>General Settings</h2>
+        <label for="collectFromAllTabs">
+          <input type="checkbox" id="collectFromAllTabs"> Collect emails from all tabs
+        </label>
+        <h2>Automatic Scanning</h2>
+        <label for="automaticScanToggle">
+          <input type="checkbox" id="automaticScanToggle"> Enable automatic scanning (every 10 seconds)
+        </label>
+        <h2>Hotkeys</h2>
+        <p>Manual Scan: Ctrl+Shift+S (configurable in browser settings)</p>
+        <!-- Other settings can be added here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
